@@ -4,7 +4,7 @@ document.getElementById("results").style.display = "none";
 class UI {
   // alert
   addResultsToPage(result) {
-    const list = document.getElementById("resultsTable");
+    const list = document.getElementById("resultsContainer");
     // create Headers
     const headers = document.createElement("tr");
     //Insert headers
@@ -18,8 +18,6 @@ class UI {
     <th scope="col" class="px-3">Strike Rate</th>
     <th scope="col" class="px-3">Exchange Commission</th>
     <th scope="col" class="px-3">Trades Simulated</th>
-
-    <th scope="col" class="px-3">Delete</th>
     
     `;
     list.appendChild(headers);
@@ -36,7 +34,6 @@ class UI {
     <td class="px-3">${result.exchangeCommission}%</td>
     <td class="px-3">${result.simAmount}</td>
 
-    <td class="px-3"><a href="#" class="delete">x</a></td>  
     `;
     list.appendChild(row);
   }
@@ -259,6 +256,20 @@ document.getElementById("simBtn").addEventListener("click", function (e) {
 
     //Clear fields
     ui.clearFields();
+  }
+
+  e.preventDefault();
+});
+
+document.getElementById("clrBtn").addEventListener("click", function (e) {
+  console.log("clicked");
+  if (document.getElementById("resultsContainer")) {
+    console.log("true");
+    document.getElementById("resultsContainer").innerHTML = "";
+    // hide results
+    document.getElementById("results").style.display = "none";
+  } else {
+    console.log("false");
   }
 
   e.preventDefault();
