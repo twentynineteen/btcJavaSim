@@ -10,7 +10,22 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
+    <style>
+      .success,
+      .error {
+        margin: auto;
+        
+      }
+      .success {
+        background: rgb(26, 107, 68);
+        border-color: rgb(17, 71, 45);
+        color: white;
+      }
+      .error {
+        background: rgb(247, 215, 219);
+        border-color: rgb(180, 75, 88)
+      }
+    </style>
     <title>BTC Strategy Simulator</title>
   </head>
   <body class="bg-dark">
@@ -21,6 +36,7 @@
             <h1 class="heading display-5 pb-3">
               BTC Trading Strategy Simulator
             </h1>
+            <div></div>
             <form id="sim-form">
               <div class="form-check form-check-inline mb-3">
                 <input
@@ -128,14 +144,14 @@
           </div>
           <div class="results card card-body text-center mt-3" id="results">
             <h1>results</h1>
-            <div class="resultsTable m-3 .table-responsive"></div>
+            <div class="resultsTable table-responsive" id="resultsTable">
+              <div></div>
+            </div>
           </div>
-          <div class="warning mt-3" id="warning">
-            <div class="alert alert-danger">Please fill in all fields</div>
           </div>
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script src="appClass.js"></script>
   </body>
 </html>
